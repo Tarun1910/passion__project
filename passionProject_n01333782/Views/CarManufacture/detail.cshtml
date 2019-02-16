@@ -1,0 +1,29 @@
+﻿@model passionProject_n01333782.Models.CarManufactures
+
+@{
+    ViewBag.Title = "details";
+}
+<div class="promptlink">
+
+   
+</div>
+<div class="promptlinkleft">
+    @Html.ActionLink("Back to List", "List")
+</div>
+<div>
+    
+     <h2>@Model.CompanyName  @Model.Year </h2>
+    </div>
+    
+    <div class="inprow">
+        @foreach (var CName in Model.car_Manufactures)
+        {
+            <div class="recitem">
+
+                @Html.ActionLink(CName.CompanyName, "Show/" + CName.Year,"Name")
+            </div>
+        }
+   
+    </div>
+
+
