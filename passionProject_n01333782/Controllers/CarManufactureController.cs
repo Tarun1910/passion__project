@@ -83,15 +83,11 @@ namespace passionProject_n01333782.Controllers
             //return information to the view list.cshtml
             //list.cshtml should be of model type IEnumerable<CarManufacturer>
         }
-        public ActionResult Edit(int? Name_id)
-        {
+       // public ActionResult Edit(int? Name_id)
+       // {
             
-            CarManufactures Edit pageedit = new PageEdit();
-            pageedit.page = db.Pages.Find(id);
-            pageedit.blogs = db.Blogs.ToList();
-            pageedit.tags = db.Tags.ToList();
-            if (pageedit.page != null) return View(pageedit);
-            else return HttpNotFound();
-        }
+       //     CarManufactures 
+        //    else return HttpNotFound();
+        //}
     }
 }
