@@ -137,9 +137,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902211735206_Initial migration.cs" />
+    <Compile Include="Migrations\201902211735206_Initial migration.Designer.cs">
+      <DependentUpon>201902211735206_Initial migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902211909267_Added modelid in carmake model.cs" />
+    <Compile Include="Migrations\201902211909267_Added modelid in carmake model.Designer.cs">
+      <DependentUpon>201902211909267_Added modelid in carmake model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CarCMSContext.cs" />
     <Compile Include="Models\CarMake.cs" />
     <Compile Include="Models\CarManufactures.cs" />
+    <Compile Include="Models\ViewModels\carMakeEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +163,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Compile Include="Models\ViewModels\carManufactureEdit.cs" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -179,18 +190,14 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CarManufacture\Create.cshtml" />
-    <Content Include="Views\CarManufacture\edit.cshtml" />
-    <Content Include="Views\CarMake\edit.cshtml" />
-    <Content Include="Views\CarMake\Add.cshtml" />
-    <Content Include="Views\CarMake\Delete.cshtml" />
-    <Content Include="Views\CarMake\CarMake1.cshtml" />
+    <Content Include="Views\CarManufacture\Edit.cshtml" />
     <Content Include="Views\CarManufacture\List.cshtml" />
-    <Content Include="Views\CarManufacture\detail.cshtml" />
+    <Content Include="Views\CarManufacture\Detail.cshtml" />
     <Content Include="Views\CarManufacture\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
+    <Folder Include="Views\CarMake\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -204,6 +211,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902211735206_Initial migration.resx">
+      <DependentUpon>201902211735206_Initial migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902211909267_Added modelid in carmake model.resx">
+      <DependentUpon>201902211909267_Added modelid in carmake model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

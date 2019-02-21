@@ -22,8 +22,23 @@ namespace passionProject_n01333782.Controllers
            
             return View();
         }
-
         
+        public ActionResult Detail (int? id)
+        {
+            if (id ==null)
+            {                
+              return new HttpStatusCodeResult(HttpStatusCode.BadRequest);                
+            }
+            CarManufactures carManufactures = db.car_Manufactures.Find(id);
+            {
+               if (carManufactures == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(carManufactures);
+            }
+        }
         //actually want to write to db
         [HttpPost]
         public ActionResult Create(string carmaketext, string caryear)        
@@ -55,6 +70,39 @@ namespace passionProject_n01333782.Controllers
             //redirect this to list 
           return RedirectToAction("List");
         }
+        public ActionResult Edit(int? id)
+        {
+            if ((id== null) || (db.car_Manufactures.Find(id) == null))
+            {
+                return HttpNotFound();
+            }
+
+            CarManufactures carManufactures = db.car_Manufactures.Find(id);
+
+
+            return View(carManufactures);
+        }
+
+        [HttpPost,ActionName("Edit")]
+        public ActionResult Edit(int? id, string name, string year)
+        {
+            //If the ID doesn't exist or the blog doesn't exist
+            if ((id == null) || (db.car_Manufactures.Find(id) == null))
+            {
+                return HttpNotFound();
+
+            }
+            string query = "update CarManufactures set CompanyName=@CompanyName, Year=@Year where Name_id=@id";
+            SqlParameter[] myparams = new SqlParameter[3];
+            myparams[0] = new SqlParameter("@CompanyName", name);
+            myparams[1] = new SqlParameter("@Year", year);
+            myparams[2] = new SqlParameter("@id", id);
+            
+            db.Database.ExecuteSqlCommand(query, myparams);
+
+            return RedirectToAction("List");
+        }
+
 
         public ActionResult Delete(int? Id)
         {
@@ -72,7 +120,15 @@ namespace passionProject_n01333782.Controllers
             return View(carManufactures);
         }
 
-        
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            CarManufactures Name_id = db.car_Manufactures.Find(id);
+            db.car_Manufactures.Remove(Name_id);
+            db.SaveChanges();
+            return RedirectToAction("List");
+        }
         public ActionResult List()
         {
 

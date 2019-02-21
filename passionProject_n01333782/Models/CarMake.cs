@@ -10,14 +10,17 @@ namespace passionProject_n01333782.Models
     public class CarMake    
     {
         [Key]
+        public int ModelID { get; set; }
         [Required, StringLength(99), Display(Name = "Model Name")]
         public string ModelName { get; set; }
 
-        [Required, StringLength(99), Display(Name = "Model Trim")]
+        [Required, StringLength(99), Display(Name = "Model year")]
         public string ModelYear { get; set; }
 
-        [Required, StringLength(255), Display(Name = "Model Type")]
+        [Required, StringLength(255), Display(Name = "Description")]
         public string Description { get; set; }
+        
+        public virtual CarManufactures CarManufactures { get; set; }
 
     }
 }

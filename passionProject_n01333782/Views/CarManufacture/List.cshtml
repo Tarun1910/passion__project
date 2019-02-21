@@ -7,7 +7,7 @@
 <br/>
 
 <div class="recadd">
-    @Html.ActionLink("Add!", "Create")
+    @Html.ActionLink("Add a New Manufacturer", "Create")
 </div>
 <div>
     <table class="table">
@@ -33,10 +33,11 @@
                 @Html.DisplayFor(modelItem => item.Year)
             </td>
             <td>
-                @Html.ActionLink("Delete","Delete", new { Id = item.Name_id })|
-                @Html.ActionLink("Edit","edit", new { Id= item.Name_id})
+                @Html.ActionLink("Delete ","Delete", new { Id = item.Name_id })|
+                @Html.ActionLink("Edit ","Edit", new { Id= item.Name_id})|
+                @Html.ActionLink("Detail","Detail",new { Id = item.Name_id })
 
-            </td>
+            </td> 
         </tr>
         }
     </table>

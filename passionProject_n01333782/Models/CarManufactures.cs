@@ -18,6 +18,6 @@ namespace passionProject_n01333782.Models
         [Required, StringLength(99), Display(Name = "Est Year")]
         public string Year { get; set; }
 
-      
+        public virtual ICollection<CarMake> CarMakes { get; set; }
     }
 }
