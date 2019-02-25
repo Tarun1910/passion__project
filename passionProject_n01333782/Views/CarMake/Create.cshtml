@@ -1,0 +1,37 @@
+﻿@model IEnumerable<passionProject_n01333782.Models.CarManufactures>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form method="Post" action="/CarMake/Create">
+    <div class="inptrow">
+        <label class="inplabel">Manufactures</label>
+        <select id="car_manu" name="car_manu">
+            @foreach (var carManufacturer in Model)
+            {
+                <option value="@carManufacturer.Name_id">@carManufacturer.CompanyName</option>
+            }
+        </select>
+    </div>
+    <div class="inprow">
+        <label>Model Name</label>
+        <input id="modelText" name="modelText" />
+    </div>
+    <div class="inprow">
+        <label>Model Year</label>
+        <input id="yearText" name="yearText" />
+    </div>
+    <div class="inprow">
+        <label>Model Description</label>
+        <input id="descText" name="descText" />
+    </div>
+    <div class="inprow">
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>

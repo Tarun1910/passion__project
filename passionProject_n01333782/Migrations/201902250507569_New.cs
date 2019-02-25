@@ -3,7 +3,7 @@ namespace passionProject_n01333782.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initialmigration : DbMigration
+    public partial class New : DbMigration
     {
         public override void Up()
         {
@@ -11,12 +11,13 @@ namespace passionProject_n01333782.Migrations
                 "dbo.CarMakes",
                 c => new
                     {
+                        ModelID = c.Int(nullable: false, identity: true),
                         ModelName = c.String(nullable: false, maxLength: 99),
                         ModelYear = c.String(nullable: false, maxLength: 99),
                         Description = c.String(nullable: false, maxLength: 255),
                         CarManufactures_Name_id = c.Int(),
                     })
-                .PrimaryKey(t => t.ModelName)
+                .PrimaryKey(t => t.ModelID)
                 .ForeignKey("dbo.CarManufactures", t => t.CarManufactures_Name_id)
                 .Index(t => t.CarManufactures_Name_id);
             

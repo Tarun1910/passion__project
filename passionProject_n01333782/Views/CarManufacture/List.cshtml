@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<passionProject_n01333782.Models.CarManufactures>
-@{ 
+@{
 
     ViewBag.Title = "List";
 
- }
-<br/>
+}
+<br />
+<h2>List of Car Manufacturer</h2>
+<br />
 
 <div class="recadd">
     @Html.ActionLink("Add a New Manufacturer", "Create")
@@ -17,28 +19,29 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Year)
-            </th>            
-            <th></th>
+            </th>
+
+            <th>Action</th>
         </tr>
 
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
+            <tr>
+                <td>
 
-                @Html.DisplayFor(modelItem => item.CompanyName)
-            </td>
-            <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
 
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.ActionLink("Delete ","Delete", new { Id = item.Name_id })|
-                @Html.ActionLink("Edit ","Edit", new { Id= item.Name_id})|
-                @Html.ActionLink("Detail","Detail",new { Id = item.Name_id })
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete ", "Delete", new { Id = item.Name_id })|
+                    @Html.ActionLink("Edit ", "Edit", new { Id = item.Name_id })|
+                    @Html.ActionLink("Detail", "Detail", new { Id = item.Name_id })
 
-            </td> 
-        </tr>
+                </td>
+            </tr>
         }
     </table>
 </div>

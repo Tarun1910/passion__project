@@ -1,4 +1,4 @@
-﻿@model passionProject_n01333782.Models.CarManufactures  
+﻿@model passionProject_n01333782.Models.CarManufactures
 
 @{
     ViewBag.Title = "Details";
@@ -7,18 +7,22 @@
 
 
 </div>
-<div class="promptlinkleft">
-    @Html.ActionLink("Back to List", "List")
-</div>
+
 <div>
     <h2>@Model.CompanyName</h2>
 </div>
 <div>
-    <label class="inputLabel">establishment Year: </label>@Model.Year
+    <label class="inputLabel">Establishment Year: </label>@Model.Year
 </div>
 
 <h3>Car's By @Model.CompanyName</h3>
 @foreach (var car in Model.CarMakes)
 {
-    <span class="recitem">@Html.ActionLink(car.ModelName, "Detail/" + car.ModelID, "CarMake")</span>
+    // <span class="recitem">@Html.ActionLink(car.ModelName, "Detail/" + car.ModelID, "CarMake")</span>
+    <div class="recitem">
+        @Html.ActionLink(car.ModelName, "Detail/" + car.ModelID, "CarMake")
+    </div>
 }
+<div class="promptlinkleft">
+    @Html.ActionLink("Back to List", "List")
+</div>

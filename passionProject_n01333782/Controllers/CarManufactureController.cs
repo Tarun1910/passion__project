@@ -86,7 +86,7 @@ namespace passionProject_n01333782.Controllers
         [HttpPost,ActionName("Edit")]
         public ActionResult Edit(int? id, string name, string year)
         {
-            //If the ID doesn't exist or the blog doesn't exist
+           
             if ((id == null) || (db.car_Manufactures.Find(id) == null))
             {
                 return HttpNotFound();
@@ -102,7 +102,6 @@ namespace passionProject_n01333782.Controllers
 
             return RedirectToAction("List");
         }
-
 
         public ActionResult Delete(int? Id)
         {
@@ -121,14 +120,21 @@ namespace passionProject_n01333782.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            CarManufactures Name_id = db.car_Manufactures.Find(id);
-            db.car_Manufactures.Remove(Name_id);
-            db.SaveChanges();
+            string query = "delete from CarMakes where CarManufactures_Name_id= @id";
+            db.Database.ExecuteSqlCommand(query, new SqlParameter("@id", id));
+
+
+            query = "delete from CarManufactures where Name_id= @id";
+            db.Database.ExecuteSqlCommand(query, new SqlParameter("@id", id));
+
+
             return RedirectToAction("List");
         }
+
+
+           
         public ActionResult List()
         {
 

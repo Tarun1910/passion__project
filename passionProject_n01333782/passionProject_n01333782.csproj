@@ -132,18 +132,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\CarManufactureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902211735206_Initial migration.cs" />
-    <Compile Include="Migrations\201902211735206_Initial migration.Designer.cs">
-      <DependentUpon>201902211735206_Initial migration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201902211909267_Added modelid in carmake model.cs" />
-    <Compile Include="Migrations\201902211909267_Added modelid in carmake model.Designer.cs">
-      <DependentUpon>201902211909267_Added modelid in carmake model.cs</DependentUpon>
+    <Compile Include="Migrations\201902250507569_New.cs" />
+    <Compile Include="Migrations\201902250507569_New.Designer.cs">
+      <DependentUpon>201902250507569_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CarCMSContext.cs" />
@@ -175,7 +173,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -194,10 +194,14 @@
     <Content Include="Views\CarManufacture\List.cshtml" />
     <Content Include="Views\CarManufacture\Detail.cshtml" />
     <Content Include="Views\CarManufacture\Delete.cshtml" />
+    <Content Include="Views\CarMake\Detail.cshtml" />
+    <Content Include="Views\CarMake\Delete.cshtml" />
+    <Content Include="Views\CarMake\List.cshtml" />
+    <Content Include="Views\CarMake\Edit.cshtml" />
+    <Content Include="Views\CarMake\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CarMake\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -213,11 +217,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902211735206_Initial migration.resx">
-      <DependentUpon>201902211735206_Initial migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902211909267_Added modelid in carmake model.resx">
-      <DependentUpon>201902211909267_Added modelid in carmake model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902250507569_New.resx">
+      <DependentUpon>201902250507569_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

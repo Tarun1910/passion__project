@@ -1,0 +1,54 @@
+﻿@model IEnumerable<passionProject_n01333782.Models.CarMake>
+@{
+    ViewBag.Title = "List";
+}
+<br/>
+<h2>List of Car Models</h2>
+<br />
+
+    <div class="recadd">
+        @Html.ActionLink("Add a New Car Model", "Create")
+    </div>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarManufactures.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarManufactures.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Delete ", "Delete", new { Id = item.ModelID })|
+                @Html.ActionLink("Edit ", "Edit", new { Id = item.ModelID })|
+                @Html.ActionLink("Detail", "Detail", new { Id = item.ModelID })
+
+            </td>
+        </tr>
+         }
+    </table>
+</div>
+

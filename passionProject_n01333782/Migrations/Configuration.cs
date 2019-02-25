@@ -9,7 +9,7 @@ namespace passionProject_n01333782.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(passionProject_n01333782.Models.CarCMSContext context)

@@ -21,6 +21,7 @@ namespace passionProject_n01333782.Models
         public string Description { get; set; }
         
         public virtual CarManufactures CarManufactures { get; set; }
+        
 
     }
 }

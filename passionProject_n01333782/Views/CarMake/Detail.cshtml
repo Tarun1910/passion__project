@@ -1,0 +1,21 @@
+﻿@model passionProject_n01333782.Models.CarMake
+@{
+    ViewBag.Title = "Detail";
+}
+<br />
+
+    <p>Car Company Name :<strong> @Model.CarManufactures.CompanyName</strong><p>
+    <p>Car Model Name:<strong> @Model.ModelName</strong></p>
+    <div>
+        <p class="inputLabel">Year: <strong>@Model.ModelYear</strong></p>
+    </div>
+
+    <div>
+        <p class="inputLabel">Description: <strong>@Model.Description</strong></p>
+    </div>
+    <div class="promptlinkleft">
+        <p>@Html.ActionLink("Back to List", "List")</p>
+    </div>
+    <div class="promptlink">
+        @Html.ActionLink("Edit", "Edit/" + Model.ModelID)
+    </div>

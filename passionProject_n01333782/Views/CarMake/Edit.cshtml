@@ -1,0 +1,31 @@
+﻿@model passionProject_n01333782.Models.ViewModels.carMakeEdit
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Car Model Here...</h2>
+
+<form method="Post" action="/CarMake/Edit/@Model.carMake.ModelID">
+    <select id="car_manu" name="car_manu">
+        @foreach (var carManufacturer in Model.carManufactures)
+        {
+            <option value="@carManufacturer.Name_id">@carManufacturer.CompanyName</option>
+        }
+    </select>
+    <div class="inprow">
+        <label class="inputLabel">Model Name</label>
+        <input type="text" value="@Model.carMake.ModelName" id="Mname" name="Mname" />
+    </div>
+    <div class="inprow">
+        <label class="inputLabel">Model Year</label>
+        <input type="text" value="@Model.carMake.ModelYear" id="year" name="year" />
+    </div>
+    <div class="inprow">
+        <label class="inputLabel">Description</label>
+        <input type="text" value="@Model.carMake.Description" id="Mdesc" name="Mdesc" />
+    </div>
+    <div class="inprow">
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+
